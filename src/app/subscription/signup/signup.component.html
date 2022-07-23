@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h3>Please fill the following form to subscribe</h3>
+    <form #subscriptionForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          ngModel
+          #email="ngModel"
+          email
+          required
+        />
+        <p *ngIf="!email.valid && email.touched">
+          Please input a correct email!
+        </p>
+      </div>
+      <div class="form-group">
+        <label for="subscription_type">Subscription type</label>
+        <select
+          class="form-control"
+          id="subscription_type"
+          name="subscriptionType"
+          [ngModel]="defaultSubscriptionType"
+        >
+          <option
+            *ngFor="let subscriptionType of subscriptionTypes"
+            [value]="subscriptionType"
+          >
+            {{ subscriptionType | titlecase }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          ngModel
+          #password="ngModel"
+          required
+        />
+        <p *ngIf="!password.valid && password.touched">
+          Password cannot be empty!
+        </p>
+      </div>
+      <div class="form-group">
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="!subscriptionForm.valid"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
