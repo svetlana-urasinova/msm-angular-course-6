@@ -1,4 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
+import { NgForm } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { SubscriptionService } from "../shared/subscription.service";
 import { SubscriptionData } from "../shared/types";
@@ -9,7 +10,7 @@ import { SubscriptionData } from "../shared/types";
   styleUrls: ["./signup.component.css"],
 })
 export class SignupComponent {
-  @ViewChild("subscriptionForm") public form: HTMLFormElement;
+  @ViewChild("subscriptionForm") public form: NgForm;
 
   public subscriptionTypes = ["basic", "advanced", "pro"];
   public defaultSubscriptionType = "advanced";
