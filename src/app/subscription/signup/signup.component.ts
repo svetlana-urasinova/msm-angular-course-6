@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { SubscriptionService } from "../shared/subscription.service";
 import { SubscriptionData } from "../shared/types";
